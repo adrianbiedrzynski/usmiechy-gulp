@@ -10,7 +10,114 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  color: $yellow;
-  background: $violet;
+.container {
+  width: 100%;
+  height: 99vh;
+  background-image: url(../assets/img/bgcfoto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__text{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    font-family: 'Lustria', serif;
+    color: white;
+    z-index: 1;
+    &--arrow { 
+      position: absolute;
+      bottom: 5%;
+      left: calc(50% - 25px);
+      font-size: 50px;
+      color: white;
+      z-index: 1;
+    }
+  }
+}
+
+.site__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 10vh;
+  grid-template-areas: "logo text navbar" "navigation navigation navigation";
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgb(129, 158, 196);
+  &--logo{  width: 50%;
+    grid-area: logo;
+    margin: 10px;
+  }
+}
+
+.site__header--text {
+  grid-area: text;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Lustria', serif;
+  font-size: 26px;
+}
+
+.site__header--navbar {
+  color: white;
+  grid-area: navbar;
+  justify-self: end;
+  background: transparent;
+  border: 0;
+  margin: 12px;
+  width: 50px;
+  height: 40px;
+  border-top: 5px solid white;
+  position: relative;
+  transition: 0.3s transform linear;
+  z-index: 2;
+}
+
+.site__header--navbar::before, .site__header--navbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 5px solid white;
+  transform: translateY(10px)
+}
+
+.site__header--navbar::after {
+  transform: translateY(25px);
+  transition: 0.3s transform linear;
+}
+
+.site__header--navbar--active {
+  transform: rotate(45deg) translateY(5px);
+  border: none;
+}
+
+.site__header--navbar--active::after {
+  transform: rotate(-90deg) translateX(-10px);
+}
+
+.site__header--navigation {
+  margin-top: -2px;
+  transform: translateY(-150%);
+  width: 100%;
+  height: 100%;
+  grid-area: navigation;
+  background-color: rgb(129, 158, 196);
+  transition: 0.3s transform linear;
+&--active {
+  transform: translateY(0);
+  transition: 0.3s transform linear;
+&--ul {
+  list-style: none;
+&--li--a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: 'Lustria', serif;
+}
+}
+}
 }
