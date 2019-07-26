@@ -12,7 +12,7 @@ html {
 
 .container {
   width: 100%;
-  height: 99vh;
+  height: 100vh;
   background-image: url(../assets/img/bgcfoto.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,7 +34,7 @@ html {
   }
 }
 
-.site__header {
+.header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -45,13 +45,13 @@ html {
   left: 0;
   top: 0;
   background-color: $blue;
-  &--logo{  width: 50%;
+  &__logo{  width: 50%;
     grid-area: logo;
     margin: 10px;
   }
 }
 
-.site__header--text {
+.header__text {
   grid-area: text;
   color: white;
   text-transform: uppercase;
@@ -59,7 +59,7 @@ html {
   font-size: 26px;
 }
 
-.site__header--navbar {
+.header__navbar {
   color: white;
   grid-area: navbar;
   justify-self: end;
@@ -74,7 +74,7 @@ html {
   z-index: 2;
 }
 
-.site__header--navbar::before, .site__header--navbar::after {
+.header__navbar::before, .header__navbar::after {
   content: '';
   position: absolute;
   top: 0;
@@ -84,21 +84,21 @@ html {
   transform: translateY(10px)
 }
 
-.site__header--navbar::after {
+.header__navbar::after {
   transform: translateY(25px);
   transition: 0.3s transform linear;
 }
 
-.site__header--navbar--active {
+.header__navbar--active {
   transform: rotate(45deg) translateY(5px);
   border: none;
 }
 
-.site__header--navbar--active::after {
+.header__navbar--active::after {
   transform: rotate(-90deg) translateX(-10px);
 }
 
-.site__header--navigation {
+.header__navigation {
   margin-top: -2px;
   transform: translateY(-150%);
   width: 100%;
@@ -109,10 +109,12 @@ html {
 &--active {
   transform: translateY(0);
   transition: 0.3s transform linear;
-&--ul {
-  list-style: none;
-  &--li{
-    margin: 14px;
+}
+}
+
+.header__navigation--list{
+list-style: none;
+margin: 14px;
 &--a {
   text-decoration: none;
   color: white;
@@ -121,6 +123,6 @@ html {
   font-family: $lustria;
 }
 }
-}
-}
-}
+
+  
+

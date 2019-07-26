@@ -16,13 +16,12 @@ if ('serviceWorker' in navigator) {
 
 // place your code below
 
-const button = document.querySelector('.site__header--navbar');
+const button = document.querySelector('.header__navbar--js');
+const navigation = document.querySelector('.header__navigation--js');
 
 button.addEventListener('click', () => {
-  const navigation = document.querySelector('.site__header--navigation');
-  navigation.classList.toggle('site__header--navigation--active');
-  const bar = document.querySelector('.site__header--navbar');
-  bar.classList.toggle('site__header--navbar--active')
+  navigation.classList.toggle('header__navigation--active');
+  button.classList.toggle('header__navbar--active')
 })
 
 
