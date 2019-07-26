@@ -315,8 +315,145 @@ html {
   -webkit-box-sizing: inherit;
           box-sizing: inherit; }
 
-body {
-  color: #F9C802;
-  background: #dd17dd; }
+.container {
+  width: 100%;
+  height: 99vh;
+  background-image: url(../assets/img/bgcfoto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .container__text {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    font-family: "Lustria", serif;
+    color: white;
+    z-index: 1; }
+    .container__text--arrow {
+      position: absolute;
+      bottom: 5%;
+      left: calc(50% - 25px);
+      font-size: 50px;
+      color: white;
+      z-index: 1; }
+
+.site__header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  height: 10vh;
+      grid-template-areas: "logo text navbar" "navigation navigation navigation";
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #819ec4; }
+  .site__header--logo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    width: 50%;
+    grid-area: logo;
+    margin: 10px; }
+
+.site__header--text {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: text;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Lustria", serif;
+  font-size: 26px; }
+
+.site__header--navbar {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  color: white;
+  grid-area: navbar;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  background: transparent;
+  border: 0;
+  margin: 12px;
+  width: 50px;
+  height: 40px;
+  border-top: 5px solid white;
+  position: relative;
+  -webkit-transition: 0.3s -webkit-transform linear;
+  transition: 0.3s -webkit-transform linear;
+  -o-transition: 0.3s transform linear;
+  transition: 0.3s transform linear;
+  transition: 0.3s transform linear, 0.3s -webkit-transform linear;
+  z-index: 2; }
+
+.site__header--navbar::before, .site__header--navbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 5px solid white;
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px); }
+
+.site__header--navbar::after {
+  -webkit-transform: translateY(25px);
+      -ms-transform: translateY(25px);
+          transform: translateY(25px);
+  -webkit-transition: 0.3s -webkit-transform linear;
+  transition: 0.3s -webkit-transform linear;
+  -o-transition: 0.3s transform linear;
+  transition: 0.3s transform linear;
+  transition: 0.3s transform linear, 0.3s -webkit-transform linear; }
+
+.site__header--navbar--active {
+  -webkit-transform: rotate(45deg) translateY(5px);
+      -ms-transform: rotate(45deg) translateY(5px);
+          transform: rotate(45deg) translateY(5px);
+  border: none; }
+
+.site__header--navbar--active::after {
+  -webkit-transform: rotate(-90deg) translateX(-10px);
+      -ms-transform: rotate(-90deg) translateX(-10px);
+          transform: rotate(-90deg) translateX(-10px); }
+
+.site__header--navigation {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  margin-top: -2px;
+  -webkit-transform: translateY(-150%);
+      -ms-transform: translateY(-150%);
+          transform: translateY(-150%);
+  width: 100%;
+  height: 100%;
+  grid-area: navigation;
+  background-color: #819ec4;
+  -webkit-transition: 0.3s -webkit-transform linear;
+  transition: 0.3s -webkit-transform linear;
+  -o-transition: 0.3s transform linear;
+  transition: 0.3s transform linear;
+  transition: 0.3s transform linear, 0.3s -webkit-transform linear; }
+  .site__header--navigation--active {
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: 0.3s -webkit-transform linear;
+    transition: 0.3s -webkit-transform linear;
+    -o-transition: 0.3s transform linear;
+    transition: 0.3s transform linear;
+    transition: 0.3s transform linear, 0.3s -webkit-transform linear; }
+    .site__header--navigation--active--ul {
+      list-style: none; }
+      .site__header--navigation--active--ul--li {
+        margin: 14px; }
+        .site__header--navigation--active--ul--li--a {
+          text-decoration: none;
+          color: white;
+          font-size: 24px;
+          text-transform: uppercase;
+          font-family: "Lustria", serif; }
 
 /*# sourceMappingURL=main.css.map */
